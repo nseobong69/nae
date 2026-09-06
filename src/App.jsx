@@ -30,15 +30,26 @@ const projects = [
     name: "VIS Portal",
     tag: "LIVE · 948 STUDENTS",
     tagColor: "16A34A",
+    image: "/assets/vis-portal-dashboard.jpg",
     desc: "Full multi-tenant school management platform, architected and built solo — admissions, results, CBT testing, ID cards, TOTP 2FA, fee tracking, staff payroll, and an offline-capable PWA. Now running two separate school brands on the same codebase.",
     stack: ["React", "Supabase", "PostgreSQL", "Edge Functions", "PWA", "Multi-tenant"],
     highlight: true,
   },
   {
+    name: "Apex Academy (VIS Portal, white-labelled)",
+    tag: "LIVE · SECOND TENANT",
+    tagColor: "16A34A",
+    image: "/assets/apex-class-hub.jpg",
+    desc: "The same VIS Portal codebase, re-skinned and deployed solo as an independent product for a second school — proof this isn't a one-off build but a reusable, white-label school management platform.",
+    stack: ["Multi-tenant", "White-label", "Supabase"],
+    highlight: false,
+  },
+  {
     name: "Emanicel Stores POS",
     tag: "LIVE · 283 PRODUCTS TRACKED",
     tagColor: "16A34A",
-    desc: "Point-of-sale and inventory platform in active commercial use — 53,987 stock units tracked, low-stock alerting, retail/wholesale pricing modes, Paystack payments, accounting, staff and debt management.",
+    image: "/assets/emanicel-pos.jpg",
+    desc: "Point-of-sale and inventory platform designed and built solo, now in active commercial use — 53,987 stock units tracked, low-stock alerting, retail/wholesale pricing modes, Paystack payments, accounting, staff and debt management.",
     stack: ["React", "Supabase", "PostgreSQL", "Paystack", "RBAC"],
     highlight: false,
   },
@@ -46,7 +57,8 @@ const projects = [
     name: "Career Bridge",
     tag: "LIVE · 23,798 JOBS INDEXED",
     tagColor: VIOLET.replace("#",""),
-    desc: "AI-powered career platform: resume-to-job match scoring, AI resume tailoring, job discovery, an application tracker (Applied → Interview → Offer), interview prep with STAR guidance, and a CV bank — plus an admin dashboard tracking usage and revenue.",
+    image: "/assets/career-bridge-admin.jpg",
+    desc: "AI-powered career platform, conceived and built end-to-end solo: resume-to-job match scoring, AI resume tailoring, job discovery, an application tracker (Applied → Interview → Offer), interview prep with STAR guidance, and a CV bank — plus an admin dashboard tracking usage and revenue.",
     stack: ["React", "Claude API", "AI Matching", "Admin Dashboard"],
     highlight: true,
   },
@@ -54,7 +66,8 @@ const projects = [
     name: "TFunds Bot",
     tag: "DEPLOYED · LIVE",
     tagColor: VIOLET.replace("#",""),
-    desc: "Multi-exchange crypto trading bot with HMAC-SHA256 signed API calls to Bybit, OKX, KuCoin, and Coinbase. Eight-indicator confluence engine, demo mode for zero-risk testing, and 100% local key signing — nothing is ever transmitted or stored.",
+    image: "/assets/tfunds-bot.jpg",
+    desc: "Multi-exchange crypto trading bot, architected and built solo, with HMAC-SHA256 signed API calls to Bybit, OKX, KuCoin, and Coinbase. Eight-indicator confluence engine, demo mode for zero-risk testing, and 100% local key signing — nothing is ever transmitted or stored.",
     stack: ["React", "HMAC-SHA256", "8-Indicator Engine", "Security-First"],
     highlight: false,
   },
@@ -62,7 +75,7 @@ const projects = [
     name: "Football Prediction Bot",
     tag: "AGENTIC AI",
     tagColor: CYAN.replace("#",""),
-    desc: "Two-phase agentic pipeline — Phase 1 discovers live fixtures via web search; Phase 2 runs per-fixture analysis through Claude API with injected real-time context. Results stream progressively to the UI.",
+    desc: "Two-phase agentic pipeline, designed and built solo — Phase 1 discovers live fixtures via web search; Phase 2 runs per-fixture analysis through Claude API with injected real-time context. Results stream progressively to the UI.",
     stack: ["React", "Claude API", "Agentic Pipeline"],
     highlight: false,
   },
@@ -70,7 +83,7 @@ const projects = [
     name: "NairaPulse",
     tag: "DEPLOYED",
     tagColor: "16A34A",
-    desc: "Fintech concept app with Paystack payment integration, scaffolded and deployed with a production-ready payment flow.",
+    desc: "Fintech concept app, scaffolded and deployed solo, with a Paystack integration and a production-ready payment flow.",
     stack: ["Paystack", "Vercel", "Fintech"],
     highlight: false,
   },
@@ -82,7 +95,8 @@ const writingWorks = [
     name: "Future Entrepreneurs Accelerator Programme",
     tag: "GOV'T PARTNERSHIP PROPOSAL",
     tagColor: AMBER.replace("#",""),
-    desc: "A full strategic partnership proposal to the Edo State Ministry of Youth Affairs, aligned to the Governor's SHINE Agenda — pilot design for 100 youth entrepreneurs, with methodology, M&E framework, sustainability strategy, and a fully itemised financial and logistics annex.",
+    image: "/assets/accelerator-proposal-cover.jpg",
+    desc: "A full strategic partnership proposal researched and authored solo for the Edo State Ministry of Youth Affairs, aligned to the Governor's SHINE Agenda — pilot design for 100 youth entrepreneurs, with methodology, M&E framework, sustainability strategy, and a fully itemised financial and logistics annex.",
     stack: ["Government Partnership", "M&E Framework", "Budget Annex"],
     highlight: true,
   },
@@ -90,7 +104,8 @@ const writingWorks = [
     name: "Shell Nigeria CSR Scholarship Proposal",
     tag: "₦5,000,000 FUNDING ASK",
     tagColor: GREEN,
-    desc: "CSR sponsorship letter and school profile for Victorious International Schools, requesting a ₦5,000,000 scholarship fund to protect 1,000+ students and expand aid to 50 more — with a transparent, quarterly-reported accountability model built on the school's own VIS Portal system.",
+    image: "/assets/school-profile-cover.jpg",
+    desc: "CSR sponsorship letter and school profile written solo for Victorious International Schools, requesting a ₦5,000,000 scholarship fund to protect 1,000+ students and expand aid to 50 more — with a transparent, quarterly-reported accountability model built on the school's own VIS Portal system.",
     stack: ["CSR Fundraising", "Accountability Framework", "School Profile"],
     highlight: true,
   },
@@ -98,7 +113,8 @@ const writingWorks = [
     name: "Communication for Business Growth & Development Masterclass",
     tag: "EXECUTIVE CURRICULUM · 6 MODULES",
     tagColor: CYAN.replace("#",""),
-    desc: "A full executive-retreat curriculum on leadership and stakeholder communication — session flows, spotlight case stories, facilitator toolkits, and a stakeholder-mapping framework, built for CEOs and senior leadership teams.",
+    image: "/assets/comms-masterclass-toc.jpg",
+    desc: "A full executive-retreat curriculum designed solo on leadership and stakeholder communication — session flows, spotlight case stories, facilitator toolkits, and a stakeholder-mapping framework, built for CEOs and senior leadership teams.",
     stack: ["Curriculum Design", "Facilitator Guide", "Executive Training"],
     highlight: false,
   },
@@ -106,7 +122,8 @@ const writingWorks = [
     name: "Retire to Productivity™",
     tag: "CURRICULUM · 10 MODULES",
     tagColor: CYAN.replace("#",""),
-    desc: "A pre-retirement transition programme built around a 'Five Capitals' framework (Relevance, Productive Capability, Trust Equity, Access & Influence, Freedom Fuel) — reframing retirement as a designed transition rather than an ending to survive.",
+    image: "/assets/retire-productivity-toc.jpg",
+    desc: "A pre-retirement transition programme authored solo, built around a 'Five Capitals' framework (Relevance, Productive Capability, Trust Equity, Access & Influence, Freedom Fuel) — reframing retirement as a designed transition rather than an ending to survive.",
     stack: ["Programme Design", "Career Transition", "Framework Development"],
     highlight: false,
   },
@@ -114,7 +131,8 @@ const writingWorks = [
     name: "Teens Business Academy Masterclass",
     tag: "CURRICULUM · AGES 12–19",
     tagColor: AMBER.replace("#",""),
-    desc: "A practical entrepreneurship and leadership curriculum for teenagers, delivered through Center-ECD's Teens Business Academy — mindset-building, real Naija-context exercises, and a change-maker spotlight model.",
+    image: "/assets/teens-academy-cover.jpg",
+    desc: "A practical entrepreneurship and leadership curriculum written solo for teenagers, delivered through Center-ECD's Teens Business Academy — mindset-building, real Naija-context exercises, and a change-maker spotlight model.",
     stack: ["Youth Entrepreneurship", "Curriculum Design", "Facilitation"],
     highlight: false,
   },
@@ -122,7 +140,8 @@ const writingWorks = [
     name: "Public Speaking Masterclass",
     tag: "CURRICULUM · 6 MODULES",
     tagColor: AMBER.replace("#",""),
-    desc: "A full public speaking and communication curriculum, from origins of oratory through delivery, persuasion, and graduation — complete with certificates, evaluation forms, and a facilitator preparation checklist.",
+    image: "/assets/public-speaking-toc.jpg",
+    desc: "A full public speaking and communication curriculum designed solo, from origins of oratory through delivery, persuasion, and graduation — complete with certificates, evaluation forms, and a facilitator preparation checklist.",
     stack: ["Curriculum Design", "Facilitator Toolkit", "Communication Training"],
     highlight: false,
   },
@@ -208,7 +227,7 @@ function Nav({ role, setRole }) {
 
   const links = ["Projects", "Writing", "Skills", "Contact"];
   return (
-    <nav style={{
+    <nav id="site-nav" style={{
       position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
       background: scrolled ? "rgba(15,17,23,0.97)" : "transparent",
       backdropFilter: scrolled ? "blur(12px)" : "none",
@@ -260,7 +279,7 @@ function Nav({ role, setRole }) {
 function Hero() {
   const typed = useTyping(roles);
   return (
-    <section style={{
+    <section id="hero-section" style={{
       minHeight: "92vh", display: "flex", alignItems: "center",
       padding: "9rem 2rem 4rem",
       background: `radial-gradient(ellipse 80% 60% at 20% 40%, rgba(0,217,255,0.06) 0%, transparent 60%),
@@ -349,7 +368,9 @@ function About() {
         <p style={{ color: MUTED, fontSize: "1rem", lineHeight: 1.9, marginTop: "1.25rem", fontFamily: "'Segoe UI', sans-serif" }}>
           Today that means I can sit in a room with a ministry, a school, or a founder, and do all three
           things they usually need three different people for: design the programme, write the proposal
-          that funds it, and build the system that runs it.
+          that funds it, and build the system that runs it. Every project on this page — every line of
+          code, every proposal, every curriculum — was researched, written, and built by me alone, start
+          to finish.
         </p>
       </div>
     </section>
@@ -384,34 +405,46 @@ function WorkCard({ p }) {
       onMouseLeave={() => setHovered(false)}
       style={{
         background: CARD, border: `1px solid ${hovered ? CYAN + "55" : BORDER}`,
-        borderRadius: "10px", padding: "1.5rem",
+        borderRadius: "10px", overflow: "hidden",
         transition: "border-color 0.25s",
         gridColumn: p.highlight ? "span 2" : "span 1",
       }}
     >
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "0.75rem", gap: "0.5rem", flexWrap: "wrap" }}>
-        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", color: WHITE, fontSize: "1.1rem", fontWeight: 700 }}>
-          {p.name}
-        </h3>
-        <span style={{
-          fontFamily: "monospace", fontSize: "0.65rem", fontWeight: 700,
-          color: `#${p.tagColor}`,
-          border: `1px solid #${p.tagColor}44`,
-          padding: "2px 8px", borderRadius: "20px", whiteSpace: "nowrap",
-        }}>{p.tag}</span>
-      </div>
-      <p style={{
-        color: MUTED, fontSize: "0.85rem", lineHeight: 1.65,
-        fontFamily: "'Segoe UI', sans-serif", marginBottom: "1.25rem",
-      }}>{p.desc}</p>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem" }}>
-        {p.stack.map(s => (
-          <span key={s} style={{
-            fontFamily: "monospace", fontSize: "0.7rem", color: hovered ? CYAN : "#6B7280",
-            background: hovered ? "rgba(0,217,255,0.08)" : "#21262D",
-            padding: "2px 8px", borderRadius: "4px", transition: "all 0.25s",
-          }}>{s}</span>
-        ))}
+      {p.image && (
+        <div style={{ width: "100%", aspectRatio: "16 / 10", overflow: "hidden", background: "#0A0D12" }}>
+          <img
+            src={p.image}
+            alt={`${p.name} screenshot`}
+            loading="lazy"
+            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }}
+          />
+        </div>
+      )}
+      <div style={{ padding: "1.5rem" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "0.75rem", gap: "0.5rem", flexWrap: "wrap" }}>
+          <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", color: WHITE, fontSize: "1.1rem", fontWeight: 700 }}>
+            {p.name}
+          </h3>
+          <span style={{
+            fontFamily: "monospace", fontSize: "0.65rem", fontWeight: 700,
+            color: `#${p.tagColor}`,
+            border: `1px solid #${p.tagColor}44`,
+            padding: "2px 8px", borderRadius: "20px", whiteSpace: "nowrap",
+          }}>{p.tag}</span>
+        </div>
+        <p style={{
+          color: MUTED, fontSize: "0.85rem", lineHeight: 1.65,
+          fontFamily: "'Segoe UI', sans-serif", marginBottom: "1.25rem",
+        }}>{p.desc}</p>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem" }}>
+          {p.stack.map(s => (
+            <span key={s} style={{
+              fontFamily: "monospace", fontSize: "0.7rem", color: hovered ? CYAN : "#6B7280",
+              background: hovered ? "rgba(0,217,255,0.08)" : "#21262D",
+              padding: "2px 8px", borderRadius: "4px", transition: "all 0.25s",
+            }}>{s}</span>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -630,6 +663,13 @@ export default function App() {
         @media (max-width: 720px) {
           [data-grid] { grid-template-columns: 1fr !important; }
           [data-grid] > * { grid-column: span 1 !important; }
+          #site-nav {
+            position: static !important;
+            background: ${CHAR} !important;
+            backdrop-filter: none !important;
+            border-bottom: 1px solid ${BORDER} !important;
+          }
+          #hero-section { padding-top: 3rem !important; min-height: auto !important; }
         }
       `}</style>
       <Nav role={role} setRole={setRole} />
