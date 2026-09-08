@@ -49,7 +49,7 @@ const projects = [
         "TODO: a concrete before/after metric (e.g. time saved processing results, admissions turnaround)",
       ],
       lessons:
-        "TODO: one or two sentences of honest self-critique — e.g. why the rebuild to Astro/TypeScript was necessary, what you'd architect differently starting today.",
+        "The single-file HTML/JS architecture was the right call to ship fast with no team and prove the product worked — but it became harder to maintain as the feature set grew across 12 roles and dozens of screens. Security work like RLS policies and XSS remediation had to be retrofitted rather than designed in from the start, which took longer than if I'd separated concerns earlier. If I were starting today, I'd begin with the Astro/TypeScript architecture and component library from day one — the rebuild exists because I learned that lesson the hard way, on a live system serving real schools.",
     },
   },
   {
@@ -66,7 +66,7 @@ const projects = [
         "A retail business needed point-of-sale and inventory management that handled real-world selling patterns — items sold individually and in bulk units — with accurate stock levels under concurrent use.",
       decisions: [
         "Multi-unit selling model: same inventory item sellable by piece or by bulk unit, with stock correctly decremented either way",
-        "Fixed a race condition where concurrent sales could over-sell stock — TODO: describe the fix (e.g. row-level locking, atomic decrement via Postgres function)",
+        "Fixed a race condition where two near-simultaneous sales of the same item could both read the same stock count before either write landed, over-selling inventory that wasn't actually available — resolved by moving the stock decrement into an atomic Postgres function so the read-check-write happens as a single database operation instead of separate round trips from the client",
         "Bulk import pipeline for onboarding existing inventory quickly",
         "Paystack integration for in-store and online payment reconciliation",
         "Role-based access control separating cashier, manager, and admin permissions",
@@ -76,7 +76,7 @@ const projects = [
         "TODO: transaction volume, number of active staff/cashier accounts, or inventory items tracked",
       ],
       lessons:
-        "TODO: what the race-condition bug taught you about concurrency in Supabase/Postgres.",
+        "The race condition only showed up under real concurrent use, not in my own testing — it taught me not to trust client-side read-then-write logic for anything shared across multiple users, and to push those operations into the database as atomic functions by default rather than as an afterthought once a bug surfaces.",
     },
   },
   {
@@ -86,8 +86,25 @@ const projects = [
     desc: "Multi-exchange crypto trading bot with HMAC-SHA256 signed API calls to Bybit, OKX, KuCoin, and Coinbase. AI-gate layer validates signals before execution. Full technical analysis engine: EMA, RSI, MACD, Bollinger Bands.",
     stack: ["React", "HMAC-SHA256", "Bybit", "OKX", "KuCoin", "AI Gate"],
     highlight: false,
-    liveUrl: "",
-    githubUrl: "",
+    liveUrl: "", // TODO
+    githubUrl: "", // TODO
+    caseStudy: {
+      problem:
+        "Manual crypto trading is slow to react and error-prone under pressure. The goal was a bot that could read technical signals across multiple exchanges, filter out low-confidence trades, and execute automatically — without requiring a single point of failure on one exchange's API or uptime.",
+      decisions: [
+        "Multi-exchange architecture: unified signed-request layer over four separate exchange APIs (Bybit, OKX, KuCoin, Coinbase), each with its own auth scheme, rate limits, and response format — normalized into one internal interface",
+        "HMAC-SHA256 request signing implemented per-exchange to meet each API's authentication requirements, with careful handling of nonce/timestamp requirements to avoid replay/signature rejection errors",
+        "Technical analysis engine built from scratch: EMA, RSI, MACD, and Bollinger Bands computed from live price feeds to generate trade signals",
+        "AI-gate layer: signals from the technical analysis engine are not executed directly — they're passed through an AI validation step before any order is placed, adding a second line of judgment beyond pure indicator thresholds",
+        "Failure handling built around the fact that exchange APIs fail independently and inconsistently: a request to one exchange timing out or getting rate-limited doesn't halt the others, and a rejected signed request is treated as 'no trade' rather than retried blindly — since blindly retrying a financial order is far more dangerous than missing one",
+      ],
+      rebuild: "",
+      results: [
+        "TODO: uptime, number of trades executed, or a specific bug/incident you caught and fixed (e.g. a signature mismatch, rate-limit throttling issue)",
+      ],
+      lessons:
+        "Building one signing/auth layer across four exchanges taught me that 'unified API' is a lie you tell yourself early on — each exchange has different nonce rules, error formats, and rate-limit behavior, and the real engineering work is in the normalization layer that hides those differences from the rest of the app, not in the trading logic itself.",
+    },
   },
   {
     name: "Football Prediction Bot",
