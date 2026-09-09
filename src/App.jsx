@@ -75,7 +75,6 @@ const projects = [
       rebuild: "",
       results: [
         "283 products tracked across 53,987+ stock units in live inventory",
-        "TODO: transaction volume or number of active staff/cashier accounts, if you want to add it",
       ],
       lessons:
         "The race condition only showed up under real concurrent use, not in my own testing — it taught me not to trust client-side read-then-write logic for anything shared across multiple users, and to push those operations into the database as atomic functions by default rather than as an afterthought once a bug surfaces.",
@@ -101,9 +100,7 @@ const projects = [
         "Failure handling built around the fact that exchange APIs fail independently and inconsistently: a request to one exchange timing out or getting rate-limited doesn't halt the others, and a rejected signed request is treated as 'no trade' rather than retried blindly — since blindly retrying a financial order is far more dangerous than missing one",
       ],
       rebuild: "",
-      results: [
-        "TODO: uptime, number of trades executed, or a specific bug/incident you caught and fixed (e.g. a signature mismatch, rate-limit throttling issue)",
-      ],
+      results: [],
       lessons:
         "Building one signing/auth layer across four exchanges taught me that 'unified API' is a lie you tell yourself early on — each exchange has different nonce rules, error formats, and rate-limit behavior, and the real engineering work is in the normalization layer that hides those differences from the rest of the app, not in the trading logic itself.",
     },
