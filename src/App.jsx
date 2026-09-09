@@ -44,9 +44,10 @@ const projects = [
       rebuild:
         "Currently migrating from a single-file HTML/JS app to Astro + TypeScript with a shared design system/component library — same Supabase backend, rolled out incrementally by portal (Parent, Student, Staff/Teacher, Admin) so the school never loses service during the transition.",
       results: [
-        "1,000+ active users across parent, student, and staff roles",
-        "TODO: number of schools/tenants live on the platform",
-        "TODO: a concrete before/after metric (e.g. time saved processing results, admissions turnaround)",
+        "948 students, 24 teaching staff, and 28 active classes managed live on the platform",
+        "12 distinct user roles (admin, teachers, students, parents, reception, and more) served by one system",
+        "2 schools live on the platform (Victorious International Schools and Apex Academy), each with its own branding via the rebrand/credential migration",
+        "Result processing time cut from 10 days to roughly 2 hours per term",
       ],
       lessons:
         "The single-file HTML/JS architecture was the right call to ship fast with no team and prove the product worked — but it became harder to maintain as the feature set grew across 12 roles and dozens of screens. Security work like RLS policies and XSS remediation had to be retrofitted rather than designed in from the start, which took longer than if I'd separated concerns earlier. If I were starting today, I'd begin with the Astro/TypeScript architecture and component library from day one — the rebuild exists because I learned that lesson the hard way, on a live system serving real schools.",
@@ -73,7 +74,8 @@ const projects = [
       ],
       rebuild: "",
       results: [
-        "TODO: transaction volume, number of active staff/cashier accounts, or inventory items tracked",
+        "283 products tracked across 53,987+ stock units in live inventory",
+        "TODO: transaction volume or number of active staff/cashier accounts, if you want to add it",
       ],
       lessons:
         "The race condition only showed up under real concurrent use, not in my own testing — it taught me not to trust client-side read-then-write logic for anything shared across multiple users, and to push those operations into the database as atomic functions by default rather than as an afterthought once a bug surfaces.",
